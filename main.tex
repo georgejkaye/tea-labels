@@ -1,0 +1,37 @@
+\documentclass[a4paper,10pt]{letter}
+\usepackage[freepin,boxed]{ticket}
+\usepackage{tgpagella}
+\usepackage{tikz}
+\usepackage{xcolor}
+
+\renewcommand{\ticketdefault}{}
+
+\unitlength=1mm
+\hoffset=-15mm
+\voffset=-15mm
+\ticketNumbers{3}{8}
+\ticketSize{55}{22.5}
+\ticketDistance{10}{10}
+
+\definecolor{blacktea}{HTML}{394960}
+\definecolor{greentea}{HTML}{5a6d6b}
+\definecolor{whitetea}{HTML}{75665f}
+\definecolor{oolong}{HTML}{75665f}
+\definecolor{flavouredinfusion}{HTML}{825e82}
+\definecolor{organicherbalinfusion}{HTML}{abc367}
+\definecolor{herbalinfusion}{HTML}{8ab9ef}
+\definecolor{fruitinfusion}{HTML}{b865cf}
+
+\newcommand{\tinlabel}[4]{\ticket{%
+    \begin{tikzpicture}
+        \draw [fill=#2] (0,0) rectangle (5.5,-2.25);
+        \draw [text=white,anchor=center] (2.75, -0.5) node {\scriptsize#4};
+        \draw [text=white,anchor=center] (2.75,-1) node {\textbf{#1}};
+        \draw [fill=white,draw=none] (0,-1.5) rectangle (5.5,-1.9);
+        \draw [text=#2,anchor=center] (2.75, -1.7) node {\textbf{\scalebox{0.8}{#3}}};
+    \end{tikzpicture}
+}}
+
+\begin{document}
+\input{example}
+\end{document}
